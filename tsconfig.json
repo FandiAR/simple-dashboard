@@ -18,7 +18,7 @@
 		"paths": {
 			"@components": ["components"],
 			"@containers/*": ["containers/*"],
-			"@pages/*": ["src/pages/*"],
+			"@pages/*": ["pages/*"],
 			"@styles/*": ["styles/*"]
 		}
   },
