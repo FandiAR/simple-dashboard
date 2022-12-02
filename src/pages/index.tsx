@@ -6,7 +6,7 @@ const HomeContainer = dynamic(() => import('@containers/Home'));
 const HomePage = () => (
 	<>
 		<Head>
-			<title>Pintar Ventura</title>
+			<title>Simple Dashboard | Home</title>
 		</Head>
 		<HomeContainer />
 	</>
