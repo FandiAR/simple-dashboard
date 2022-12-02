@@ -1,0 +1,124 @@
+{
+	"ignorePatterns": [".eslintrc.json"],
+	"parser": "@typescript-eslint/parser",
+	"plugins": ["@typescript-eslint", "eslint-plugin-import-helpers", "prettier"],
+	"extends": [
+		"eslint:recommended",
+		"next/core-web-vitals",
+		"next",
+		"prettier",
+		"plugin:@next/next/recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:prettier/recommended",
+		"plugin:@typescript-eslint/recommended"
+	],
+	"overrides": [
+		{
+			"files": ["*.ts", "*.tsx"],
+			"parserOptions": {
+				"ecmaFeatures": {
+					"jsx": true
+				},
+				"project": ["./tsconfig.json"],
+				"ecmaVersion": 12,
+				"sourceType": "module"
+			},
+			"rules": {
+				"no-undef": "off",
+				"import-helpers/order-imports": [
+					"error",
+					{
+						"newlinesBetween": "always",
+						"alphabetize": {"order": "asc", "ignoreCase": true}
+					}
+				]
+			}
+		}
+	],
+	"rules": {
+		"import/no-anonymous-default-export": 0,
+		"@typescript-eslint/no-unused-vars": "error",
+		"@typescript-eslint/no-explicit-any": "error",
+		"@typescript-eslint/naming-convention": [
+			"error",
+			{
+				"selector": "enum",
+				"format": ["PascalCase"],
+				"suffix": ["Enum"]
+			}
+		],
+		"prefer-destructuring": [
+			"error",
+			{
+				"array": true,
+				"object": true
+			},
+			{
+				"enforceForRenamedProperties": false
+			}
+		],
+		"@typescript-eslint/array-type": [
+			"error",
+			{
+				"default": "generic"
+			}
+		],
+		"@typescript-eslint/ban-ts-comment": "warn",
+		"@typescript-eslint/consistent-generic-constructors": "error",
+		"@typescript-eslint/consistent-indexed-object-style": "error",
+		"@typescript-eslint/consistent-type-definitions": ["error", "type"],
+		"@typescript-eslint/indent": "off",
+		"@typescript-eslint/no-duplicate-enum-values": "error",
+		"@typescript-eslint/no-shadow": "error",
+		"@typescript-eslint/no-use-before-define": "error",
+		"class-methods-use-this": "off",
+		"import/prefer-default-export": 0,
+		"no-inline-comments": "error",
+		"no-nested-ternary": "warn",
+		"no-shadow": "off",
+		"no-unreachable": "error",
+		"no-unused-vars": "off",
+		"no-restricted-imports": [
+			"warn",
+			{
+				"patterns": [
+					{
+						"group": ["../*"],
+						"message": "Usage of relative parent imports is not allowed."
+					}
+				]
+			}
+		],
+		"react-hooks/exhaustive-deps": "warn",
+		"react-hooks/rules-of-hooks": "off",
+		"react/button-has-type": "off",
+		"react/display-name": "warn",
+		"react/jsx-props-no-spreading": "warn",
+		"react/jsx-boolean-value": "error",
+		"react/jsx-closing-bracket-location": "error",
+		"react/jsx-closing-tag-location": "error",
+		"react/jsx-curly-newline": "off",
+		"react/jsx-filename-extension": ["error", {"extensions": [".tsx", ".jsx"]}],
+		"react/jsx-indent-props": [2, "tab"],
+		"react/jsx-indent": "off",
+		"no-console": "warn",
+		"react/jsx-tag-spacing": [
+			2,
+			{
+				"beforeSelfClosing": "always"
+			}
+		],
+		"react/jsx-wrap-multilines": [
+			2,
+			{
+				"declaration": "parens-new-line",
+				"assignment": "parens-new-line",
+				"return": "parens-new-line",
+				"arrow": "ignore",
+				"condition": "ignore",
+				"logical": "ignore",
+				"prop": "ignore"
+			}
+		]
+	}
+}
