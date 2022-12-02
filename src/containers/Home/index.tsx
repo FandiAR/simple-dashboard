@@ -1,7 +1,8 @@
-import {ArrowRightOutlined, Card, Grid, Layout, Typography} from '@components';
 import {colors} from '@styles/colors';
 import React from 'react';
 import {Chart} from 'react-google-charts';
+
+import {ArrowRightOutlined, Card, Grid, Layout, Typography} from '@components';
 
 import DashboardProfitSales from './DashboardProfitSales';
 import TopAgents from './TopAgents';

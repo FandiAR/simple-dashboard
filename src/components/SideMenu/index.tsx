@@ -1,3 +1,8 @@
+import {colors} from '@styles/colors';
+import {Menu, MenuProps} from 'antd';
+import Router from 'next/router';
+import styled from 'styled-components';
+
 import {
 	AppstoreOutlined,
 	CreditCardOutlined,
@@ -5,10 +10,6 @@ import {
 	RedEnvelopeOutlined,
 	TransactionOutlined,
 } from '@components';
-import {colors} from '@styles/colors';
-import {Menu, MenuProps} from 'antd';
-import Router from 'next/router';
-import styled from 'styled-components';
 
 const StyledMenu = styled(Menu)`
 	background: ${colors.primary.background};

@@ -1,7 +1,9 @@
-import {Grid, ProfileCard, SideMenu, Typography} from '@components';
 import {colors} from '@styles/colors';
 import {ReactNode} from 'react';
 import styled from 'styled-components';
+
+import {Grid, ProfileCard, SideMenu, Typography} from '@components';
+import dateFormatter from '@utils/dateFormatter';
 
 const LayoutContainer = styled(Grid)`
 	margin: 20px !important;
@@ -47,7 +49,12 @@ const Layout = ({
 			</Grid>
 			<Grid item span={16}>
 				<Typography title level={4} text={title} />
-				<Typography text="Today’s date: Thu, 01 December 2022" />
+				<Typography
+					text={`Today’s date: ${dateFormatter(
+						new Date(),
+						'EEE, dd MMM yyyy',
+					)}`}
+				/>
 				<ContentContainer>{children}</ContentContainer>
 			</Grid>
 			<ProfileCard />

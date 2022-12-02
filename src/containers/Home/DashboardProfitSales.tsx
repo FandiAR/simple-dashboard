@@ -1,3 +1,5 @@
+import {colors} from '@styles/colors';
+
 import {
 	ArrowDownOutlined,
 	ArrowUpOutlined,
@@ -5,7 +7,6 @@ import {
 	Grid,
 	Typography,
 } from '@components';
-import {colors} from '@styles/colors';
 
 const DashboardProfitSales = () => (
 	<Grid justify="space-between" gutter={{xs: 8, sm: 16, md: 24, lg: 32}}>

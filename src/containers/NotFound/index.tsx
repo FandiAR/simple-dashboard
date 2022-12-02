@@ -1,7 +1,8 @@
-import {Result, Button} from '@components';
 import {colors} from '@styles/colors';
 import Router from 'next/router';
 import React from 'react';
+
+import {Result, Button} from '@components';
 
 const NotFoundContainer = () => {
 	return (

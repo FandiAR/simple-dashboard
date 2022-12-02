@@ -1,6 +1,7 @@
-import {Avatar, Card, Grid, Typography} from '@components';
 import {colors} from '@styles/colors';
 import styled from 'styled-components';
+
+import {Avatar, Card, Grid, Typography} from '@components';
 
 const MarginTop10px = styled.div`
 	margin-top: 10px;

@@ -1,3 +1,7 @@
+import {colors} from '@styles/colors';
+import {message} from 'antd';
+import styled from 'styled-components';
+
 import {
 	Card,
 	DownOutlined,
@@ -7,9 +11,6 @@ import {
 	Typography,
 	Button,
 } from '@components';
-import {colors} from '@styles/colors';
-import {message} from 'antd';
-import styled from 'styled-components';
 
 const StyledCard = styled(Card)`
 	margin: 0 auto !important;

@@ -1,5 +1,8 @@
 {
-	"ignorePatterns": [".eslintrc.json"],
+	"ignorePatterns": ["environment.d.ts", ".eslintrc.json"],
+	"env": {
+		"jest/globals": true
+	},
 	"parser": "@typescript-eslint/parser",
 	"plugins": ["@typescript-eslint", "eslint-plugin-import-helpers", "prettier"],
 	"extends": [
@@ -29,14 +32,76 @@
 					"error",
 					{
 						"newlinesBetween": "always",
+						"groups": [
+							"module",
+							"/^@shared/",
+							[
+								"/^@components/",
+								"/^@constants/",
+								"/^@contexts/",
+								"/^@hooks/",
+								"/^@services/",
+								"/^@utils/"
+							],
+							["parent", "index", "sibling"]
+						],
 						"alphabetize": {"order": "asc", "ignoreCase": true}
+					}
+				],
+				"@typescript-eslint/naming-convention": [
+					"warn",
+					{
+						"selector": "default",
+						"format": ["camelCase", "UPPER_CASE", "PascalCase", "snake_case"],
+						"leadingUnderscore": "allow"
+					},
+					{
+						"selector": "typeLike",
+						"format": ["PascalCase"],
+						"custom": {
+							"regex": "^I[A-Z]",
+							"match": false
+						}
+					}
+				]
+			}
+		},
+		{
+			"files": ["*.test.ts", "*.test.tsx"],
+			"plugins": ["jest"],
+			"extends": ["plugin:jest/recommended"],
+			"rules": {
+				"@typescript-eslint/unbound-method": "off",
+				"jest/prefer-strict-equal": "error",
+				"jest/prefer-todo": "error",
+				"jest/unbound-method": "error",
+				"jest/prefer-spy-on": "error",
+				"jest/prefer-mock-promise-shorthand": "error",
+				"jest/prefer-expect-resolves": "error",
+				"jest/prefer-comparison-matcher": "error",
+				"jest/max-nested-describe": ["error", {"max": 2}],
+				"jest/prefer-lowercase-title": [
+					"error",
+					{
+						"ignore": ["describe"]
+					}
+				],
+				"jest/consistent-test-it": [
+					"error",
+					{"fn": "it", "withinDescribe": "test"}
+				],
+				"@typescript-eslint/naming-convention": [
+					"warn",
+					{
+						"selector": "default",
+						"format": ["camelCase", "UPPER_CASE", "PascalCase", "snake_case"],
+						"leadingUnderscore": "allow"
 					}
 				]
 			}
 		}
 	],
 	"rules": {
-		"import/no-anonymous-default-export": 0,
 		"@typescript-eslint/no-unused-vars": "error",
 		"@typescript-eslint/no-explicit-any": "error",
 		"@typescript-eslint/naming-convention": [
@@ -90,7 +155,7 @@
 			}
 		],
 		"react-hooks/exhaustive-deps": "warn",
-		"react-hooks/rules-of-hooks": "off",
+		"react-hooks/rules-of-hooks": "error",
 		"react/button-has-type": "off",
 		"react/display-name": "warn",
 		"react/jsx-props-no-spreading": "warn",
@@ -101,7 +166,7 @@
 		"react/jsx-filename-extension": ["error", {"extensions": [".tsx", ".jsx"]}],
 		"react/jsx-indent-props": [2, "tab"],
 		"react/jsx-indent": "off",
-		"no-console": "warn",
+		"no-console": "error",
 		"react/jsx-tag-spacing": [
 			2,
 			{

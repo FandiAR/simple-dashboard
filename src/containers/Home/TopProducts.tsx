@@ -1,7 +1,8 @@
-import {Card, Typography} from '@components';
 import {colors} from '@styles/colors';
 import Image from 'next/image';
 import styled from 'styled-components';
+
+import {Card, Typography} from '@components';
 
 const SmallCard = styled.span`
 	border: solid 3px ${colors.blueBorder};
