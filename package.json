@@ -22,6 +22,7 @@
 		"formatter": "yarn format:lint; yarn format:prettier"
 	},
 	"dependencies": {
+		"@ant-design/icons": "^4.8.0",
 		"@types/node": "18.11.10",
 		"@types/react": "18.0.25",
 		"@types/react-dom": "18.0.9",
@@ -29,6 +30,7 @@
 		"next": "13.0.6",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
+		"react-google-charts": "^4.0.0",
 		"styled-components": "^5.3.6",
 		"typescript": "4.9.3"
 	},
